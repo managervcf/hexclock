@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+}
+
+#clock {
+  width: 100vw;
+  height: 100vh;
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 5rem;
+  line-height: 100%;
+  letter-spacing: 0.25rem;
+  color: white;
+}
