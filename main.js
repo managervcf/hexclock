@@ -1,29 +1,43 @@
-let clock = document.querySelector('#clock');
-let body = document.querySelector('body');
+const clock = document.querySelector('#clock');
+const body = document.querySelector('body');
+const button = document.querySelector('#invert');
+let isInverted = false;
 
 // Run app passing clock and body elements.
-runClock(clock, body);
+runClock();
 
-function runClock(clockElement, parentElement) {
+function runClock() {
   // Set initial time and update it every second.
   // Change background color to current hex time.
-  updateClock(clockElement, parentElement, generateHexTime);
-  setInterval(
-    () => updateClock(clockElement, parentElement, generateHexTime),
-    1000
-  );
+  updateClock();
+  setInterval(updateClock, 1000);
+  button.addEventListener('click', invertColors);
 }
 
 // Updates text and backgraound.
-function updateClock(clockElement, parentElement, generateHexTime) {
-  parentElement.style.backgroundColor = clockElement.innerHTML = generateHexTime();
+function updateClock() {
+  body.style.backgroundColor = clock.innerHTML = generateHexTime();
 }
 
 // Generates current time in hexadecimal.
 function generateHexTime() {
-  let hexTime = `#${new Date()
+  let time = new Date()
     .toTimeString()
     .substring(0, 8)
-    .replace(/:/g, '')}`;
+    .replace(/:/g, '');
+  let hexTime = `#${
+    !isInverted
+      ? time
+      : time
+          .split('')
+          .reverse()
+          .join('')
+  }`;
   return hexTime;
+}
+
+function invertColors() {
+  isInverted = !isInverted;
+  clock.classList.toggle('rotate');
+  updateClock(clock, body, generateHexTime);
 }

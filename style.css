@@ -1,16 +1,46 @@
 body {
+  width: 100vw;
+  height: 100vh;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s background-color;
 }
 
 #clock {
-  width: 100vw;
-  height: 100vh;
   display: table-cell;
   vertical-align: middle;
   text-align: center;
   font-family: 'Courier New', Courier, monospace;
-  font-size: 5rem;
+  font-size: 4.5rem;
   line-height: 100%;
   letter-spacing: 0.25rem;
   color: white;
+  transition: 0.5s transform;
+}
+
+#invert {
+  margin: 2rem;
+  padding: 0.4rem 1rem;
+  background-color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-family: 'Courier New', Courier, monospace;
+  outline: none;
+  cursor: pointer;
+  transition: 0.2s transform ease-out;
+}
+
+#invert:hover {
+  transform: translateY(-0.25rem);
+}
+
+#invert:active {
+  transform: translateY(0.25rem);
+}
+
+.rotate {
+  transform: rotateY(-180deg) rotateZ(180deg) rotateX(-180deg);
 }
