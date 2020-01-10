@@ -16,7 +16,7 @@ function runClock() {
 
 // Updates text and backgraound.
 function updateClock() {
-  body.style.backgroundColor = clock.innerHTML = generateHexTime();
+  body.style.backgroundColor = clock.innerHTML = button.style.backgroundColor = generateHexTime();
 }
 
 // Generates current time in hexadecimal.
