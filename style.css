@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round');
+
+:root {
+  --inset-shadow: inset 0.4rem 0.4rem 0.7rem -0.3rem rgba(0, 0, 0, 0.4),
+    inset -0.4rem -0.4rem 0.7rem -0.3rem rgba(255, 255, 255, 0.1);
+  --shadow: 0.4rem 0.4rem 0.7rem -0.3rem rgba(0, 0, 0, 0.4),
+    -0.4rem -0.4rem 0.7rem -0.3rem rgba(255, 255, 255, 0.1);
+  --font: 'Courier New', Courier, monospace;
+  --text-color: rgba(255, 255, 255, 1);
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -13,34 +24,34 @@ body {
   display: table-cell;
   vertical-align: middle;
   text-align: center;
-  font-family: 'Courier New', Courier, monospace;
+  color: var(--text-color);
+  border-radius: 2rem;
+  font-family: var(--font);
   font-size: 4.5rem;
   line-height: 100%;
   letter-spacing: 0.25rem;
-  color: white;
-  transition: 0.5s transform;
+  transition: 0.4s all;
+  cursor: pointer;
 }
 
 #invert {
   margin: 2rem;
-  padding: 0.4rem 1rem;
-  color: white;
+  padding: 1rem 2rem;
+  color: var(--text-color);
   border: none;
-  border-radius: 0.5rem;
-  font-family: 'Courier New', Courier, monospace;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+  font-family: var(--font);
   outline: none;
   cursor: pointer;
-  transition: 0.2s transform ease-out;
-}
-
-#invert:hover {
-  transform: translateY(-0.25rem);
+  transition: 0.15s all ease-out, 0.5s background-color;
 }
 
 #invert:active {
+  box-shadow: none;
   transform: translateY(0.25rem);
 }
 
 .rotate {
-  transform: rotateY(-180deg) rotateZ(180deg) rotateX(-180deg);
+  transform: rotateY(180deg) rotateX(180deg) rotateZ(180deg);
 }
