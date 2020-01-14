@@ -49,9 +49,9 @@ body {
 
 #invert:active {
   box-shadow: none;
-  transform: translateY(0.25rem);
+  transform: translateY(0.25rem) scale(0.97);
 }
 
 .rotate {
-  transform: rotateY(180deg) rotateX(180deg) rotateZ(180deg);
+  transform: rotateY(180deg) rotateX(180deg) rotateZ(180deg) scale(1.2);
 }
