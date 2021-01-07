@@ -21,18 +21,8 @@ function updateClock() {
 
 // Generates current time in hexadecimal.
 function generateHexTime() {
-  let time = new Date()
-    .toTimeString()
-    .substring(0, 8)
-    .replace(/:/g, '');
-  let hexTime = `#${
-    !isInverted
-      ? time
-      : time
-          .split('')
-          .reverse()
-          .join('')
-  }`;
+  let time = new Date().toTimeString().substring(0, 8).replace(/:/g, '');
+  let hexTime = `#${!isInverted ? time : time.split('').reverse().join('')}`;
   return hexTime;
 }
 
